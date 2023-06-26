@@ -9,7 +9,10 @@ pipeline{
 			steps{
 				
 				script{
-					git branch: 'main', url: 'https://github.com/Tamilkumaran-hub/tamil_java_app.git'
+					gitCheckout(
+						branch: "main",
+						URL: "https://github.com/Tamilkumaran-hub/tamil_java_app.git"
+					)
 					
 				}
 			}
