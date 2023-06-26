@@ -11,7 +11,7 @@ pipeline{
 				script{
 					gitCheckout(
 						branch: "main",
-						URL: "https://github.com/Tamilkumaran-hub/tamil_java_app.git"
+						url: "https://github.com/Tamilkumaran-hub/tamil_java_app.git"
 					)
 					
 				}
