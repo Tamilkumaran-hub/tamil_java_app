@@ -3,7 +3,6 @@
 pipeline{
     agent any
     stages{
-	
         stage('Git Checkout'){		
             steps{
                 script{
@@ -12,6 +11,12 @@ pipeline{
                         url: "https://github.com/Tamilkumaran-hub/tamil_java_app.git"
                     )
 					
+		}
+	    }
+            stage('Unit Test Maven'){		
+            steps{
+                script{
+                    mvnTest()
 		}
 	    }
 	}
