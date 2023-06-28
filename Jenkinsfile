@@ -42,5 +42,13 @@ pipeline{
 		}
 	    }
 	}
+        stage('Quality gate status: Sonarqube'){
+        when { expression {  params.action == 'create' } }
+            steps{
+                script{
+                    QualityGateStatus(sonar)
+		}
+	    }
+	}
     }
 }
