@@ -46,7 +46,7 @@ pipeline{
         when { expression {  params.action == 'create' } }
             steps{
                 script{
-                    QualityGateStatus(sonar)
+                    QualityGateStatus()
 		}
 	    }
 	}
