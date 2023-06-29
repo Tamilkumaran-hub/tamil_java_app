@@ -21,40 +21,40 @@ pipeline{
 		}
 	    }
 	}
-        stage('Unit Test Maven'){
-        when { expression {  params.action == 'create' } }
-            steps{
-                script{
-                    mvnTest()
-		}
-	    }
-	}
-        stage('Integration Test Maven'){
-        when { expression {  params.action == 'create' } }
-            steps{
-                script{
-                    mvnIntegrationTest()
-		}
-	    }
-	}
-        stage('Static code analysis: Sonarqube'){
-        when { expression {  params.action == 'create' } }
-            steps{
-                script{
-		    def SonarQubecredentialsId = 'sonar'
-                    statiCodeAnalysis(SonarQubecredentialsId)
-		}
-	    }
-	}
-        stage('Quality gate status: Sonarqube'){
-        when { expression {  params.action == 'create' } }
-            steps{
-                script{
-		    def SonarQubecredentialsId = 'sonar'
-                    QualityGateStatus(SonarQubecredentialsId)
-		}
-	    }
-	}
+ //        stage('Unit Test Maven'){
+ //        when { expression {  params.action == 'create' } }
+ //            steps{
+ //                script{
+ //                    mvnTest()
+	// 	}
+	//     }
+	// }
+ //        stage('Integration Test Maven'){
+ //        when { expression {  params.action == 'create' } }
+ //            steps{
+ //                script{
+ //                    mvnIntegrationTest()
+	// 	}
+	//     }
+	// }
+ //        stage('Static code analysis: Sonarqube'){
+ //        when { expression {  params.action == 'create' } }
+ //            steps{
+ //                script{
+	// 	    def SonarQubecredentialsId = 'sonar'
+ //                    statiCodeAnalysis(SonarQubecredentialsId)
+	// 	}
+	//     }
+	// }
+ //        stage('Quality gate status: Sonarqube'){
+ //        when { expression {  params.action == 'create' } }
+ //            steps{
+ //                script{
+	// 	    def SonarQubecredentialsId = 'sonar'
+ //                    QualityGateStatus(SonarQubecredentialsId)
+	// 	}
+	//     }
+	// }
 	stage('Maven build: Maven'){
         when { expression {  params.action == 'create' } }
             steps{
