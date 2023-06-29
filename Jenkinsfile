@@ -4,9 +4,9 @@ pipeline{
     agent any
     parameters{
         choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
-	string(name: 'ImageName', descrption: 'name of the docker image', defaultValue: 'javaapp')
-	string(name: 'ImageTag', descrption: 'tag of the docker image', defaultValue: 'v1')
-	string(name: 'DockerHubUser', descrption: 'user of the dockerhub', defaultValue: 'tamil001')
+	string(name: 'ImageName', description: 'name of the docker image', defaultValue: 'javaapp')
+	string(name: 'ImageTag', description: 'tag of the docker image', defaultValue: 'v1')
+	string(name: 'DockerHubUser', description: 'user of the dockerhub', defaultValue: 'tamil001')
     }
     stages{
         stage('Git Checkout'){
