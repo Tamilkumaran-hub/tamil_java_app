@@ -12,11 +12,11 @@ pipeline{
         string(name: 'ECR_REPO_NAME', description: "name of the ECR", defaultValue: 'tamil')
 //        string(name: 'cluster', description: "name of the EKS Cluster", defaultValue: 'demo-cluster1')
     }
-//    environment{
+    environment{
 
-//        ACCESS_KEY = credentials('AKIAVDB5BI6RIIFVMJUO')
-//        SECRET_KEY = credentials('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')
-//    }
+        ACCESS_KEY = credentials('AKIAVDB5BI6RIIFVMJUO')
+        SECRET_KEY = credentials('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')
+    }
 
     stages{
          
